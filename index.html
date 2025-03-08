@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abi Kemal Jara - Ubuntu Terminal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/ubuntu-logo.png">
+</head>
+<body class="ubuntu-theme">
+    <div class="ubuntu-desktop">
+        <!-- Desktop Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <button class="app-launcher-btn" title="Open App Launcher (Super key)">
+                    <i class="fab fa-ubuntu"></i>
+                </button>
+            </div>
+            <div class="taskbar-right">
+                <div class="weather-widget">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span class="temperature">22°C</span>
+                </div>
+                <div class="datetime-widget">
+                    <span class="date">Sat, Mar 8</span>
+                    <span class="time">12:56</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="system-menu">
+                    <button class="system-btn" title="System Menu">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="system-dropdown">
+                        <div class="menu-item" data-action="settings">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </div>
+                        <div class="menu-item" data-action="theme">
+                            <i class="fas fa-moon"></i>
+                            Appearance
+                        </div>
+                        <div class="menu-item" data-action="help">
+                            <i class="fas fa-keyboard"></i>
+                            Keyboard Shortcuts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Launcher -->
+        <div class="app-launcher">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search apps..." class="app-search">
+            </div>
+            <div class="app-grid">
+                <div class="app-item" data-app="about">
+                    <i class="fas fa-user"></i>
+                    <span>About Me</span>
+                </div>
+                <div class="app-item" data-app="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Skills</span>
+                </div>
+                <div class="app-item" data-app="projects">
+                    <i class="fas fa-folder"></i>
+                    <span>Projects</span>
+                </div>
+                <div class="app-item" data-app="terminal">
+                    <i class="fas fa-terminal"></i>
+                    <span>Terminal</span>
+                </div>
+                <div class="app-item" data-app="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </div>
+                <div class="app-item" data-app="cv">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Download CV</span>
+                </div>
+            </div>
+            <div class="app-launcher-footer">
+                <div class="shortcut-hint">
+                    <span class="key">Alt</span> + <span class="key">`</span> Terminal
+                </div>
+                <div class="shortcut-hint">
+                    <span class="key">Alt</span> + <span class="key">Tab</span> Switch Apps
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <!-- Home Folder -->
+            <div class="desktop-icon" data-app="home" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="Home">
+                <span>Home</span>
+            </div>
+            
+            <!-- Development Category -->
+            <div class="desktop-icon" data-app="projects" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="Projects">
+                <span>Projects</span>
+            </div>
+            
+            <!-- Skills Category -->
+            <div class="desktop-icon" data-app="skills" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="Skills">
+                <span>Skills</span>
+            </div>
+            
+            <!-- About Me -->
+            <div class="desktop-icon" data-app="about" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="About Me">
+                <span>About Me</span>
+            </div>
+            
+            <!-- Contact -->
+            <div class="desktop-icon" data-app="contact" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="Contact">
+                <span>Contact</span>
+            </div>
+            
+            <!-- Settings -->
+            <div class="desktop-icon" data-app="settings" title="Double-click to open">
+                <img src="images/ubuntu_folder.png" alt="Settings">
+                <span>Settings</span>
+            </div>
+            
+            <!-- Terminal -->
+            <div class="desktop-icon" data-app="terminal" title="Double-click to open (Alt + `)">
+                <img src="images/ubuntu_terminal.png" alt="Terminal">
+                <span>Terminal</span>
+            </div>
+            
+            <!-- CV -->
+            <div class="desktop-icon" data-app="cv" title="Click to download CV">
+                <img src="images/ubuntu_pdf.png" alt="CV">
+                <span>Abi_CV.pdf</span>
+            </div>
+            
+            <!-- README -->
+            <div class="desktop-icon" data-app="readme" title="Click to download">
+                <img src="images/ubuntu_folder.png" alt="README">
+                <span>README</span>
+            </div>
+        </div>
+
+        <!-- App Windows -->
+        <div class="app-windows" style="z-index: 100;">
+            <!-- About Window -->
+            <div class="app-window" id="about-window">
+                <div class="window-header">
+                    <div class="window-title">
+                        <i class="fas fa-user"></i>
+                        About Me
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                        <span class="control close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="profile-info">
+                        <img src="images/avatar-5.webp" alt="Abi Kemal Jara" class="profile-image">
+                        <div class="bio-text">
+                            <h2>Abi Kemal Jara</h2>
+                            <h3>Software Engineer & CS Student</h3>
+                            <p>I craft exceptional digital experiences through innovative software solutions, specializing in:</p>
+                            <ul>
+                                <li>🚀 Mobile Development (Flutter, React Native)</li>
+                                <li>💻 Web Development (React, Node.js)</li>
+                                <li>⚙️ Systems Programming (C/C++, Rust)</li>
+                            </ul>
+                            <div class="download-buttons">
+                                <a href="images/cv-template.pdf" download class="download-btn cv-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    Download CV
+                                </a>
+                                <a href="README.md" download class="download-btn readme-btn">
+                                    <i class="fas fa-file-alt"></i>
+                                    Download README
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Window -->
+            <div class="app-window" id="skills-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-code"></i>
+                        Skills
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="window-toolbar">
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search skills..." class="skills-search">
+                        </div>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-code"></i> Languages</h3>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="expert">
+                                    <div class="skill-header">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Web Development (Flask, Django)</li>
+                                            <li>Data Analysis (Pandas, NumPy)</li>
+                                            <li>Machine Learning (TensorFlow)</li>
+                                            <li>Automation & Scripting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="advanced">
+                                    <div class="skill-header">
+                                        <i class="fab fa-js"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Modern ES6+ Features</li>
+                                            <li>React & Node.js Development</li>
+                                            <li>Async Programming</li>
+                                            <li>Browser APIs & DOM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="advanced">
+                                    <div class="skill-header">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>Dart</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Flutter App Development</li>
+                                            <li>State Management</li>
+                                            <li>Platform Integration</li>
+                                            <li>Custom Widgets</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="expert">
+                                    <div class="skill-header">
+                                        <i class="fab fa-react"></i>
+                                        <span>React</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Component Architecture</li>
+                                            <li>Redux & Context API</li>
+                                            <li>Hooks & Custom Hooks</li>
+                                            <li>Performance Optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="advanced">
+                                    <div class="skill-header">
+                                        <i class="fab fa-node-js"></i>
+                                        <span>Node.js</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Express.js & RESTful APIs</li>
+                                            <li>Database Integration</li>
+                                            <li>Authentication & Security</li>
+                                            <li>Real-time Applications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                            <div class="skill-items">
+                                <div class="skill-item" data-level="expert">
+                                    <div class="skill-header">
+                                        <i class="fab fa-git-alt"></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Version Control</li>
+                                            <li>Branching Strategies</li>
+                                            <li>Code Review</li>
+                                            <li>CI/CD Integration</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="advanced">
+                                    <div class="skill-header">
+                                        <i class="fab fa-docker"></i>
+                                        <span>Docker</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <ul>
+                                            <li>Containerization</li>
+                                            <li>Docker Compose</li>
+                                            <li>Container Orchestration</li>
+                                            <li>Deployment Strategies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="terminal-window minimized" id="terminal-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-terminal"></i>
+                        Terminal
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="command-history"></div>
+                    <div class="input-line">
+                        <span class="prompt">abdi@portfolio:~/portfolio$</span>
+                        <input type="text" class="terminal-input" autofocus placeholder="Type 'help' for available commands">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Window -->
+            <div class="app-window" id="experience-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-briefcase"></i>
+                        Experience
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="window-toolbar">
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="timeline">
+                                <i class="fas fa-stream"></i>
+                                Timeline
+                            </button>
+                            <button class="view-btn" data-view="cards">
+                                <i class="fas fa-th-large"></i>
+                                Cards
+                            </button>
+                        </div>
+                        <div class="filter-controls">
+                            <label class="filter-label">
+                                <input type="checkbox" checked data-filter="work">
+                                <i class="fas fa-briefcase"></i>
+                                Work
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" checked data-filter="education">
+                                <i class="fas fa-graduation-cap"></i>
+                                Education
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" checked data-filter="projects">
+                                <i class="fas fa-code-branch"></i>
+                                Projects
+                            </label>
+                        </div>
+                    </div>
+                    <div class="experience-timeline">
+                        <!-- Work Experience -->
+                        <div class="timeline-section" data-type="work">
+                            <div class="timeline-item current">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Software Engineer</h3>
+                                        <span class="company">Tech Innovators</span>
+                                        <span class="date">Jan 2024 - Present</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Leading development of innovative web and mobile applications using cutting-edge technologies.</p>
+                                        <div class="achievements">
+                                            <h4>Key Achievements:</h4>
+                                            <ul>
+                                                <li>Developed and launched 3 major features improving user engagement by 40%</li>
+                                                <li>Led a team of 4 developers in implementing microservices architecture</li>
+                                                <li>Reduced application load time by 60% through optimization</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tech-tags">
+                                            <span>React</span>
+                                            <span>Node.js</span>
+                                            <span>Flutter</span>
+                                            <span>AWS</span>
+                                            <span>Docker</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>Frontend Developer</h3>
+                                        <span class="company">WebCraft Solutions</span>
+                                        <span class="date">Jun 2023 - Dec 2023</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Developed responsive web applications and implemented modern UI/UX designs.</p>
+                                        <div class="achievements">
+                                            <h4>Key Achievements:</h4>
+                                            <ul>
+                                                <li>Built 5+ responsive web applications using React and Next.js</li>
+                                                <li>Implemented CI/CD pipeline reducing deployment time by 70%</li>
+                                                <li>Mentored 2 junior developers in modern web technologies</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tech-tags">
+                                            <span>React</span>
+                                            <span>Next.js</span>
+                                            <span>TypeScript</span>
+                                            <span>Tailwind</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="timeline-section" data-type="education">
+                            <div class="timeline-item current">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>BSc in Computer Science</h3>
+                                        <span class="company">Technical University of Cluj-Napoca</span>
+                                        <span class="date">2021 - Present</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Pursuing a degree in Computer Science with focus on Software Engineering and Artificial Intelligence.</p>
+                                        <div class="achievements">
+                                            <h4>Highlights:</h4>
+                                            <ul>
+                                                <li>GPA: 3.8/4.0</li>
+                                                <li>President of the Computer Science Student Association</li>
+                                                <li>Won 2nd place in the University Hackathon 2023</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tech-tags">
+                                            <span>Algorithms</span>
+                                            <span>AI/ML</span>
+                                            <span>Software Engineering</span>
+                                            <span>Database Systems</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Projects/Achievements -->
+                        <div class="timeline-section" data-type="projects">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h3>HackITall 2024 Winner</h3>
+                                        <span class="company">Hackathon Achievement</span>
+                                        <span class="date">Dec 2024</span>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Led a team of 4 to develop an AI-powered financial management application.</p>
+                                        <div class="achievements">
+                                            <h4>Project Highlights:</h4>
+                                            <ul>
+                                                <li>Implemented ML algorithms for expense prediction</li>
+                                                <li>Built real-time data visualization dashboard</li>
+                                                <li>Won 1st place among 50+ teams</li>
+                                            </ul>
+                                        </div>
+                                        <div class="tech-tags">
+                                            <span>Python</span>
+                                            <span>TensorFlow</span>
+                                            <span>React</span>
+                                            <span>Node.js</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Window -->
+            <div class="app-window" id="contact-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>Get in Touch</h3>
+                            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                            <ul class="contact-list">
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:oromaaniyaa@gmail.com">oromaaniyaa@gmail.com</a>
+                                </li>
+                                <li>
+                                    <i class="fab fa-github"></i>
+                                    <a href="https://github.com/ormaaniya" target="_blank">github.com/ormaaniya</a>
+                                </li>
+                                <li>
+                                    <i class="fab fa-linkedin"></i>
+                                    <a href="https://linkedin.com/in/abdi" target="_blank">linkedin.com/in/abdi</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Cluj, Romania
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Window -->
+            <div class="app-window" id="help-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-keyboard"></i>
+                        Keyboard Shortcuts
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="shortcuts-grid">
+                        <div class="shortcut-category">
+                            <h3>Window Management</h3>
+                            <ul>
+                                <li><span class="key">Alt</span> + <span class="key">Tab</span> Switch between windows</li>
+                                <li><span class="key">Alt</span> + <span class="key">F4</span> Close active window</li>
+                                <li><span class="key">Alt</span> + <span class="key">↑</span> Maximize window</li>
+                                <li><span class="key">Alt</span> + <span class="key">↓</span> Minimize/Restore window</li>
+                                <li><span class="key">Alt</span> + <span class="key">←</span> Snap to left</li>
+                                <li><span class="key">Alt</span> + <span class="key">→</span> Snap to right</li>
+                            </ul>
+                        </div>
+                        <div class="shortcut-category">
+                            <h3>Terminal</h3>
+                            <ul>
+                                <li><span class="key">Alt</span> + <span class="key">`</span> Toggle terminal</li>
+                                <li><span class="key">↑</span> / <span class="key">↓</span> Command history</li>
+                                <li><span class="key">Tab</span> Auto-complete command</li>
+                                <li><span class="key">Ctrl</span> + <span class="key">L</span> Clear terminal</li>
+                                <li><span class="key">Ctrl</span> + <span class="key">C</span> Cancel command</li>
+                            </ul>
+                        </div>
+                        <div class="shortcut-category">
+                            <h3>System</h3>
+                            <ul>
+                                <li><span class="key">Super</span> Toggle app launcher</li>
+                                <li>Double-click window header to maximize</li>
+                                <li>Drag window to screen edges to snap</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Window -->
+            <div class="app-window" id="projects-window">
+                <div class="window-header" title="Double-click to maximize">
+                    <div class="window-title">
+                        <i class="fas fa-folder"></i>
+                        Projects
+                    </div>
+                    <div class="window-controls">
+                        <span class="control minimize" title="Minimize"></span>
+                        <span class="control maximize" title="Maximize"></span>
+                        <span class="control close" title="Close"></span>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <div class="window-toolbar">
+                        <div class="view-controls">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search projects..." class="project-search">
+                        </div>
+                        <div class="filter-dropdown">
+                            <button class="filter-btn">
+                                <i class="fas fa-filter"></i>
+                                Filter
+                            </button>
+                            <div class="filter-menu">
+                                <label><input type="checkbox" value="web"> Web Development</label>
+                                <label><input type="checkbox" value="mobile"> Mobile Apps</label>
+                                <label><input type="checkbox" value="system"> System Programming</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card" data-type="mobile">
+                            <div class="project-header">
+                                <h3>WhatsApp Clone</h3>
+                                <span class="date">Jul 2023 - Sep 2023</span>
+                            </div>
+                            <div class="project-preview">
+                                <img src="images/whatsapp-clone.png" alt="WhatsApp Clone Preview">
+                            </div>
+                            <p>Cross-platform mobile app replicating WhatsApp's core UI and functionality, featuring real-time messaging, media sharing, and group chats.</p>
+                            <div class="project-details">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>Real-time messaging with WebSocket</li>
+                                    <li>Media sharing and storage</li>
+                                    <li>Group chat functionality</li>
+                                    <li>Push notifications</li>
+                                </ul>
+                            </div>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>Riverpod</span>
+                                <span>Firebase</span>
+                                <span>WebSocket</span>
+                                <span>Git</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ormaaniya/whatsapp-clone" class="btn" target="_blank">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a href="#demo" class="btn demo-btn">
+                                    <i class="fas fa-play"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-type="system">
+                            <div class="project-header">
+                                <h3>Minishell</h3>
+                                <span class="date">Nov 2024 - Jan 2024</span>
+                            </div>
+                            <div class="project-preview">
+                                <img src="images/minishell.png" alt="Minishell Preview">
+                            </div>
+                            <p>A robust Unix shell implementation supporting command execution, built-in commands, pipes, redirections, and environment variable management.</p>
+                            <div class="project-details">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>Command execution and piping</li>
+                                    <li>Input/output redirection</li>
+                                    <li>Environment variable handling</li>
+                                    <li>Signal handling</li>
+                                    <li>Custom built-in commands</li>
+                                </ul>
+                            </div>
+                            <div class="tech-stack">
+                                <span>C</span>
+                                <span>POSIX</span>
+                                <span>Make</span>
+                                <span>Bash</span>
+                                <span>Git</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/ormaaniya/minishell" class="btn" target="_blank">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a href="#demo" class="btn demo-btn">
+                                    <i class="fas fa-terminal"></i> Try It
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-type="web">
+                            <div class="project-header">
+                                <h3>Miney - HackITall 2024</h3>
+                                <span class="date">Dec 6, 2024 - Dec 8, 2024</span>
+                            </div>
+                            <p>Mobile application connecting foreigners with similar backgrounds.</p>
+                            <div class="tech-stack">
+                                <span>Flutter</span>
+                                <span>Flask</span>
+                                <span>SQLite</span>
+                                <span>Git</span>
+                            </div>
+                            <a href="https://github.com/ormaaniya" class="repo-link" target="_blank">
+                                <i class="fab fa-github"></i> View Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="app-window" id="terminal-window">
+                <div class="terminal-window minimized">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <div class="window-title">abdi@portfolio: ~/portfolio</div>
+            </div>
+            <div class="terminal-body">
+                <div class="command-history">
+                    <!-- Welcome Message -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">neofetch</div>
+                        <div class="output">
+                            <pre class="ascii-art">
+                    .-/+oossssoo+/-.               abdi@portfolio
+                `:+ssssssssssssssssss+:`           ---------------
+              -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.3 LTS
+            .ossssssssssssssssssdMMMNysssso.       Host: Portfolio Website
+           /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: Software Engineer
+          +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 3 years
+         /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: Mobile, Web, Systems
+        .ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: Computer Science
+        +sssshhhyNMMNyssssssssssssyNMMMysssssss+   Location: Romania
+        ossyNMMMNyMMhsssssssssssssshmmmhssssssso   
+        ossyNMMMNyMMhsssssssssssssshmmmhssssssso   Contact: oromaaniyaa@gmail.com
+        +sssshhhyNMMNyssssssssssssyNMMMysssssss+   GitHub: github.com/ormaaniya
+        .ssssssssdMMMNhsssssssssshNMMMdssssssss.   
+         /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    
+          +sssssssssdmydMMMMMMMMddddyssssssss+     
+           /ssssssssssshdmNNNNmyNMMMMhssssss/      
+            .ossssssssssssssssssdMMMNysssso.       
+              -+ssssssssssssssssssyyssss+-         
+                `:+ssssssssssssssssss+:`           
+                    .-/+oossssoo+/-.               
+                            </pre>
+                        </div>
+                    </div>
+
+                    <!-- Help Menu -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">help</div>
+                        <div class="output">
+                            Available commands:
+                            - about     : Display information about me
+                            - skills    : List my technical skills
+                            - projects  : View my projects
+                            - experience: Show work experience
+                            - education : Display educational background
+                            - contact   : Show contact information
+                            - cv        : Download my CV
+                            - clear     : Clear the terminal
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">cat about.txt</div>
+                        <div class="output about-section">
+                            <div class="profile-info">
+                                <img src="images/avatar-5.webp" alt="Abi Kemal Jara" class="profile-image">
+                                <div class="bio-text">
+                                    <h2>Abi Kemal Jara</h2>
+                                    <h3>Software Engineer & CS Student</h3>
+                                    <p>I craft exceptional digital experiences through innovative software solutions, specializing in:</p>
+                                    <ul>
+                                        <li>🚀 Mobile Development (Flutter, React Native)</li>
+                                        <li>💻 Web Development (React, Node.js)</li>
+                                        <li>⚙️ Systems Programming (C/C++, Rust)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">ls -l ./skills/</div>
+                        <div class="output skills-section">
+                            <div class="file-list">
+                                <div class="file-item directory">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span class="name">languages/</span>
+                                    <span class="details">drwxr-xr-x  8 items  Mar 8 12:05</span>
+                                </div>
+                                <div class="file-item directory">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span class="name">frameworks/</span>
+                                    <span class="details">drwxr-xr-x  5 items  Mar 8 12:05</span>
+                                </div>
+                                <div class="file-item directory">
+                                    <i class="fas fa-folder-open"></i>
+                                    <span class="name">tools/</span>
+                                    <span class="details">drwxr-xr-x  6 items  Mar 8 12:05</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">ls -la ./projects/</div>
+                        <div class="output projects-section">
+                            <div class="project-list">
+                                <div class="project-item">
+                                    <div class="project-header">
+                                        <i class="fas fa-folder-open"></i>
+                                        <span class="name">whatsapp-clone/</span>
+                                        <span class="date">Jul 2023 - Sep 2023</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="readme-content">
+                                            <pre>$ cat README.md
+WhatsApp Clone
+-------------
+Cross-platform mobile app replicating WhatsApp's core UI and functionality.
+
+Tech Stack:
+- Flutter
+- Dart
+- Riverpod
+- Git</pre>
+                                        </div>
+                                        <a href="https://github.com/ormaaniya" class="repo-link" target="_blank">
+                                            <i class="fab fa-github"></i> View Repository
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-item">
+                                    <div class="project-header">
+                                        <i class="fas fa-folder-open"></i>
+                                        <span class="name">minishell/</span>
+                                        <span class="date">Nov 2024 - Jan 2024</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="readme-content">
+                                            <pre>$ cat README.md
+Minishell
+---------
+Unix-like shell implementation supporting command execution,
+built-in commands, pipes, and redirections.
+
+Tech Stack:
+- C
+- POSIX
+- Git</pre>
+                                        </div>
+                                        <a href="https://github.com/ormaaniya" class="repo-link" target="_blank">
+                                            <i class="fab fa-github"></i> View Repository
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-item">
+                                    <div class="project-header">
+                                        <i class="fas fa-folder-open"></i>
+                                        <span class="name">miney/</span>
+                                        <span class="date">Dec 6, 2024 - Dec 8, 2024</span>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="readme-content">
+                                            <pre>$ cat README.md
+Miney - HackITall 2024
+--------------------
+Mobile application connecting foreigners with similar backgrounds.
+
+Tech Stack:
+- Flutter
+- Flask
+- SQLite
+- Git</pre>
+                                        </div>
+                                        <a href="https://github.com/ormaaniya" class="repo-link" target="_blank">
+                                            <i class="fab fa-github"></i> View Repository
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">cat experience.log</div>
+                        <div class="output experience-section">
+                            <div class="experience-list">
+                                <div class="experience-item">
+                                    <div class="job-header">
+                                        <span class="position">Software Developer @ telmed</span>
+                                        <span class="date">Nov 2023 - Mar 2024</span>
+                                    </div>
+                                    <div class="job-details">
+                                        <p>Developed a telemedicine app with features such as:</p>
+                                        <ul>
+                                            <li>Appointment booking system</li>
+                                            <li>Real-time chat and video calling</li>
+                                            <li>Medical articles platform</li>
+                                            <li>Admin dashboard</li>
+                                        </ul>
+                                        <div class="tech-stack">
+                                            <span class="tech">Flutter</span>
+                                            <span class="tech">Firebase</span>
+                                            <span class="tech">Git</span>
+                                            <span class="tech">ZegoCloud</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="experience-item">
+                                    <div class="job-header">
+                                        <span class="position">AI Trainer Dataannotation</span>
+                                        <span class="date">Jan 2024 - Jun 2024</span>
+                                    </div>
+                                    <div class="job-details">
+                                        <p>Trained AI/ML models for NLP tasks, improving datasets and enhancing system accuracy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">cat education.txt</div>
+                        <div class="output education-section">
+                            <div class="education-list">
+                                <div class="education-item">
+                                    <div class="edu-header">
+                                        <h3>Bachelor of Computer Science</h3>
+                                        <span class="institution">Technical University of Cluj-Napoca</span>
+                                        <span class="date">2022 - Present</span>
+                                    </div>
+                                    <div class="edu-details">
+                                        <p>Key Courses:</p>
+                                        <ul>
+                                            <li>Data Structures & Algorithms</li>
+                                            <li>Operating Systems</li>
+                                            <li>Computer Networks</li>
+                                            <li>Database Management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="education-item">
+                                    <div class="edu-header">
+                                        <h3>Flutter Development Certificate</h3>
+                                        <span class="institution">The Complete Flutter Development Bootcamp with Dart</span>
+                                        <span class="date">July 16, 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">cat contact.txt</div>
+                        <div class="output contact-section">
+                            <div class="contact-info">
+                                <pre>
+-----BEGIN CONTACT INFO-----
+Email: oromaaniyaa@gmail.com
+GitHub: github.com/ormaaniya
+LinkedIn: linkedin.com/in/abdi
+Location: Cluj, Romania
+Phone: +40771744061
+-----END CONTACT INFO-----
+                                </pre>
+                                <div class="contact-links">
+                                    <a href="mailto:oromaaniyaa@gmail.com" class="contact-link">
+                                        <i class="fas fa-envelope"></i> Send Email
+                                    </a>
+                                    <a href="https://github.com/ormaaniya" target="_blank" class="contact-link">
+                                        <i class="fab fa-github"></i> View GitHub
+                                    </a>
+                                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CV Download Section -->
+                    <div class="command-block">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <div class="command">wget cv.pdf</div>
+                        <div class="output cv-section">
+                            <div class="download-info">
+                                <p>Downloading: cv.pdf</p>
+                                <div class="progress-bar">
+                                    <div class="progress"></div>
+                                </div>
+                                <a href="cv.pdf" download class="download-link">
+                                    <i class="fas fa-file-pdf"></i> Download CV
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command Input -->
+                    <div class="command-input">
+                        <div class="prompt">abdi@portfolio:~/portfolio$</div>
+                        <input type="text" class="terminal-input" placeholder="Type a command...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Launcher -->
+        <div class="app-launcher">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search apps and commands...">
+            </div>
+            <div class="app-grid">
+                <div class="app-item" data-app="about">
+                    <i class="fas fa-user"></i>
+                    <span>About Me</span>
+                </div>
+                <div class="app-item" data-app="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Skills</span>
+                </div>
+                <div class="app-item" data-app="projects">
+                    <i class="fas fa-folder"></i>
+                    <span>Projects</span>
+                </div>
+                <div class="app-item" data-app="terminal">
+                    <i class="fas fa-terminal"></i>
+                    <span>Terminal</span>
+                </div>
+                <div class="app-item" data-app="cv">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Download CV</span>
+                </div>
+                <div class="app-item" data-app="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

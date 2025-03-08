@@ -1,0 +1,33 @@
+:root {
+    /* Ubuntu Colors */
+    --bg-color: #300a24;
+    --text-color: #ffffff;
+    --prompt-color: #4ee44e;
+    --command-color: #ffffff;
+    --output-color: #cccccc;
+    --link-color: #3465a4;
+    --link-hover-color: #729fcf;
+    --border-color: #333333;
+    --window-bg: rgba(48, 10, 36, 0.95);
+    --header-bg: #2c001e;
+    --selection-color: #b4009e;
+    
+    /* Ubuntu Desktop Colors */
+    --taskbar-bg: rgba(32, 14, 28, 0.95);
+    --taskbar-hover: rgba(255, 255, 255, 0.1);
+    --icon-bg: rgba(255, 255, 255, 0.1);
+    --window-border: rgba(255, 255, 255, 0.2);
+    --card-bg: rgba(48, 10, 36, 0.8);
+
+    /* Ubuntu Folder Colors */
+    --folder-color: #e95420;
+    --folder-hover-color: #eb6536;
+    --folder-icon-color: #ffffff;
+    --folder-shadow: rgba(0, 0, 0, 0.2);
+
+    /* Ubuntu App Colors */
+    --settings-color: #7864c6;
+    --profile-color: #19a187;
+    --terminal-bg: rgba(48, 10, 36, 0.95);
+    --terminal-header: #2c001e;
+}
