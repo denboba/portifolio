@@ -147,7 +147,7 @@ body {
 .desktop-icons {
     display: grid;
     grid-template-columns: repeat(auto-fill, 96px); /* Increased from 80px */
-    grid-auto-rows: 96px;
+    grid-auto-rows: 76px;
     gap: 24px;
     padding: 24px;
     position: relative;
